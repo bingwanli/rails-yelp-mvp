@@ -1,0 +1,14 @@
+<div class="container m-3 p-3 border border-primary rounded">
+  <h1 class="text-center"><%= @restaurant.name %></h1>
+  <img src="https://images.pexels.com/photos/2232/vegetables-italian-pizza-restaurant.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500" class="w-100" alt="">
+  <h5 class="text-center"><%= @restaurant.category %></h3>
+  <h5 class="text-center"><%= @restaurant.phone_number %></h3>
+  <h5 class="text-center"><%= @restaurant.address %></h3>
+  <p class="text-center"><%= link_to "Review", new_restaurant_review_path(@restaurant) %></p>
+  <div class="reviews">
+    <% @reviews.each do |r| %>
+      <p>Rating: <%= r.rating %></p>
+      <p>Review: <%= r.content %></p>
+    <% end %>
+  </div>
+</div>
